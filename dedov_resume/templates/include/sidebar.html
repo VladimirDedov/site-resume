@@ -1,0 +1,87 @@
+{% for us in user %}
+<div class="secondary col-md-4 col-sm-12 col-xs-12">
+    <aside class="info aside section">
+        <div class="section-inner">
+            <h2 class="heading">КОНТАКТЫ</h2>
+            <div class="content">
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span>{{us.address}}
+                    </li>
+                    <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span>{{us.email}}
+                    </li>
+                    <li><i class="fa fa-link"></i><span class="sr-only">Phone:</span>{{us.phone}}</li>
+                </ul>
+            </div><!--//content-->
+        </div><!--//section-inner-->
+    </aside><!--//aside-->
+
+    <aside class="skills aside section">
+        <div class="section-inner">
+            <h2 class="heading">УМЕНИЯ</h2>
+            <div class="content">
+                <div class="skillset">
+
+                        {% for skill in us.skills.all%}
+                        <div class="item">
+                            <h3 class="level-title">{{skill.skill_name}}<span class="level-label"
+                                                                             data-toggle="tooltip"
+                                                                             data-placement="left"
+                                                                             data-animation="true"
+                                                                             title="{{skill.tooltip}}">{{skill.skill_level}}</span>
+                            </h3>
+                            <div class="level-bar">
+                                <div class="level-bar-inner" data-level="{{skill.skill_value}}%">
+                                </div>
+                            </div><!--//level-bar-->
+                        </div><!--//item-->
+                        {% endfor %}
+
+                </div>
+            </div><!--//content-->
+        </div><!--//section-inner-->
+    </aside><!--//section-->
+
+    <aside class="languages aside section">
+        <div class="section-inner">
+            <h2 class="heading">Знания языков</h2>
+            <div class="content">
+                <ul class="list-unstyled">
+                    <li class="item">
+                        <span class="title"><strong>English:</strong></span>
+                        <span class="level">B1 -> B2 <br class="visible-xs"/><i class="fa fa-star"></i> <i
+                                class="fa fa-star"></i><i class="fa fa-star"></i> </span>
+                    </li><!--//item-->
+                    <li class="item">
+                        <span class="title"><strong>Русский:</strong></span>
+                        <span class="level">Родной <br class="visible-sm visible-xs"/><i
+                                class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i><i
+                                class="fa fa-star"></i> <i
+                                class="fa fa-star"></i></span>
+                    </li><!--//item-->
+                </ul>
+            </div><!--//content-->
+        </div><!--//section-inner-->
+    </aside><!--//section-->
+
+    <aside class="testimonials aside section">
+        <div class="section-inner">
+            <h2 class="heading">Testimonials</h2>
+            <div class="content">
+                <div class="item">
+                    <blockquote class="quote">
+                        <p><i class="fa fa-quote-left"></i>James is an excellent software engineer and he is
+                            passionate about what he does. You can totally count on him to deliver your
+                            projects!</p>
+                    </blockquote>
+                    <p class="source"><span class="name">Tim Adams</span><br/><span
+                            class="title">Curabitur commodo</span>
+                    </p>
+                </div><!--//item-->
+
+                <p><a class="more-link" href="#"><i class="fa fa-external-link"></i> More on Linkedin</a></p>
+
+            </div><!--//content-->
+        </div><!--//section-inner-->
+    </aside><!--//section-->
+</div><!--//secondary-->
+{% endfor %}

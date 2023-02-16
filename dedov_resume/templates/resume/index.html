@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load resume_tags %}
+
+{% block education %}
+<section class="about section">
+    <div class="section-inner">
+        <h2 class="heading">ОБРАЗОВАНИЕ</h2>
+        <div class="content">
+            {% get_education as educations %}
+            {% for edu in educations %}
+            <div class="grid_4">
+                <h3>{{edu.school_name}}</h3>
+                <h4>{{edu.specialization}}</h4>
+                <h4 class="description2">{{edu.years}}</h4>
+            </div>
+            <div class="grid_8 last">
+                <p class="p-text">
+                    {{edu.description}}
+                </p>
+                {% if edu.sertifity %}
+                <h4>Сертификаты:</h4>
+                <p><a class="more-link" href="#"><i class="fa fa-external-link"></i> Серт 1</a></p>
+                <p><a class="more-link" href="#"><i class="fa fa-external-link"></i> Серт 2</a></p>
+                {% endif%}
+            </div><!--//content-->
+            <hr>
+            {% endfor %}
+        </div><!--//section-inner-->
+</section><!--//section-->
+{% endblock education %}
+{% block experience %}
+{% get_experience as experience %}
+<section class="experience section">
+    <div class="section-inner">
+        <h2 class="heading">ОПЫТ РАБОТЫ</h2>
+        <div class="content">
+            <div class="item">
+                {% for exp in experience %}
+                <div class="grid_4">
+                    <h3>{{exp.name_organization}}</h3>
+                    <h4>{{exp.position}}</h4>
+                    <h4>{{exp.years}}</h4>
+                </div>
+                <div>
+                    <p class="p-text">{{exp.description}}</p>
+                    <h4>Обязанности:</h4>
+                    <ul class="list">
+                        {% for job in exp.job_skill.all %}
+                        <li>
+                            {{job.description_job}}
+                        </li>
+                        {% endfor%}
+                    </ul>
+                </div>
+                <hr>
+                {% endfor %}
+            </div><!--//item-->
+        </div><!--//content-->
+    </div><!--//section-inner-->
+</section><!--//section-->
+{% endblock %}
