@@ -1,0 +1,17 @@
+<section class="github section">
+    <div class="section-inner">
+        <h2 class="heading">СВЯЗАТЬСЯ СО МНОЙ</h2>
+        <form action="{% url 'index' %}" method="post">
+            {% csrf_token %}
+            <div>{{form.non_field_errors}}</div>
+            {% for f in form %}
+            <p><label class="form-label" for="{{form.title.id_for_lable}}">{{f.label}}</label> {{f}}</p>
+            {% endfor %}
+            <div class="clear"></div>
+            <button type="submit" class="btn btn-cta-primary "><i class="fa fa-paper-plane"></i>
+                Отправить мне сообщение
+            </button>
+            <div class="clear"></div>
+        </form>
+    </div>
+</section>

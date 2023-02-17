@@ -1,0 +1,25 @@
+{% load static %}
+
+<!-- ******HEADER****** -->
+<header class="header">
+    <div class="container">
+        {% for us in user %}
+        <img class="profile-image img-responsive pull-left" src="{% static 'images/vvv.jpg' %} " alt="Владимир Дедов" align="left"/>
+        {% endfor %}
+        <div class="profile-content ">
+            <h1 class="name">Владимир Дедов</h1>
+            <h3 class="desc">Python back-end Developer</h3>
+            <p class="p-text">Я, Дедов Владимир Владимирович, живу в Казахстане, город Петропавловск. Родился 21 июля
+                1986 года - 36 полных лет.</p>
+            <p class="p-text">Вся моя трудовая деятельность связана с компьютерами. Пройден путь от эникея до системного
+                администратора.
+                На данный момент увлекся разработкой на Python, что оказалось очень интересным и увлекательным занятием.
+                Вся рутинная работа теперь автоматизированна
+                Python скриптами. Python - лучший язык с точки зрения быстроты разработки. И да, данная страница собрана
+                на <strong>Django</strong>
+                плюс база данных <strong>SQLite</strong>.
+            </p>
+
+        </div><!--//profile-->
+    </div><!--//container-->
+</header><!--//header-->

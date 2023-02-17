@@ -35,29 +35,7 @@
 </head>
 
 <body>
-<!-- ******HEADER****** -->
-<header class="header">
-    <div class="container">
-        {% for us in user %}
-        <img class="profile-image img-responsive pull-left" src="{% static 'images/vvv.jpg' %} " alt="Владимир Дедов" align="left"/>
-        {% endfor %}
-        <div class="profile-content ">
-            <h1 class="name">Владимир Дедов</h1>
-            <h3 class="desc">Python back-end Developer</h3>
-            <p class="p-text">Я, Дедов Владимир Владимирович, живу в Казахстане, город Петропавловск. Родился 21 июля
-                1986 года - 36 полных лет.</p>
-            <p class="p-text">Вся моя трудовая деятельность связана с компьютерами. Пройден путь от эникея до системного
-                администратора.
-                На данный момент увлекся разработкой на Python, что оказалось очень интересным и увлекательным занятием.
-                Вся рутинная работа теперь автоматизированна
-                Python скриптами. Python - лучший язык с точки зрения быстроты разработки. И да, данная страница собрана
-                на <strong>Django</strong>
-                плюс база данных <strong>SQLite</strong>.
-            </p>
-
-        </div><!--//profile-->
-    </div><!--//container-->
-</header><!--//header-->
+{% include 'include/header.html' %}
 
 <div class="container sections-wrapper">
     <div class="row">
@@ -66,24 +44,8 @@
             {% endblock%}
             {%block experience %}
             {% endblock %}
+            {% include 'include/form.html' %}
 
-            <section class="github section">
-                <div class="section-inner">
-                    <h2 class="heading">СВЯЗАТЬСЯ СО МНОЙ</h2>
-                    <form action="{% url 'index' %}" method="post">
-                        {% csrf_token %}
-                        <div>{{form.non_field_errors}}</div>
-                        {% for f in form %}
-                        <p><label class="form-label" for="{{form.title.id_for_lable}}">{{f.label}}</label> {{f}}</p>
-                        {% endfor %}
-                        <div class="clear"></div>
-                        <button type="submit" class="btn btn-cta-primary "><i class="fa fa-paper-plane"></i>
-                            Отправить мне сообщение
-                        </button>
-                        <div class="clear"></div>
-                    </form>
-                </div>
-            </section>
         </div><!--//primary-->
         {% include 'include/sidebar.html' %}
     </div><!--//row-->

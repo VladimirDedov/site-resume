@@ -559,6 +559,6 @@ iframe {
 /* Ex-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1400px) {
   .container {
-    width: 1360px;
+    width: 1500px;
   }
 }
