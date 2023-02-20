@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load resume_tags %}
+{% load static %}
 
 {% block education %}
 <section class="about section">
@@ -19,8 +20,12 @@
                 </p>
                 {% if edu.sertifity %}
                 <h4>Сертификаты:</h4>
-                <p><a class="more-link" href="#"><i class="fa fa-external-link"></i> Серт 1</a></p>
-                <p><a class="more-link" href="#"><i class="fa fa-external-link"></i> Серт 2</a></p>
+                <p><a class="more-link" href="{% static 'Sertificates/StepikPython.pdf' %}" target="_blank"><i class="fa fa-external-link"></i> Добрый, добрый Python - обучающий курс от Сергея Балакирева</a></p>
+                <p><a class="more-link" href="{% static 'Sertificates/StepikPythonOOP.pdf' %}" target="_blank"> <i class="fa fa-external-link"></i> Добрый, добрый Python ООП - обучающий курс от
+Сергея Балакирева</a></p>
+                <p><a class="more-link" href="{% static 'Sertificates/StepikPostgreSQL.pdf' %}" target="_blank"> <i class="fa fa-external-link"></i> Практический курс по SQL и
+PostgreSQL</a></p>
+                <p><a class="more-link" href="{% static 'Sertificates/StepikSQL.pdf' %}" target="_blank"> <i class="fa fa-external-link"></i> Интерактивный тренажер по SQL</a></p>
                 {% endif%}
             </div><!--//content-->
             <hr>
