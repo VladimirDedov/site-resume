@@ -34,9 +34,9 @@ def send_message(content):
 def send_form(request):
     '''представление формы отправки и валидации'''
     if request.method == 'POST':
-        print(1)
         form = SendMailForm(request.POST)
         if form.is_valid():
             content = ('\n').join([form.cleaned_data['name'], form.cleaned_data['email'], form.cleaned_data['content']])
             send_message(content)
-    return redirect('index')
+            return render(request, 'resume/redirect.html')
+    return render(request, 'resume/captcha_error.html')

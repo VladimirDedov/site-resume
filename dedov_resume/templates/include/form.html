@@ -1,12 +1,11 @@
 <section class="github section">
     <div class="section-inner">
         <h2 class="heading">СВЯЗАТЬСЯ СО МНОЙ</h2>
-        <form action="{% url 'name_send_form' %}" method="post">
+        <form action="{% url 'name_send_form' %}" method="post" name="send_data">
             {% csrf_token %}
-
             {% for f in form %}
-            <div>{{f.errors}}</div>
             <p><label class="form-label" for="{{form.title.id_for_lable}}">{{f.label}}</label> {{f}}</p>
+            <div>{{form.captcha.errors}}</div>
             {% endfor %}
             <div class="clear"></div>
             <button type="submit" class="btn btn-cta-primary "><i class="fa fa-paper-plane"></i>
