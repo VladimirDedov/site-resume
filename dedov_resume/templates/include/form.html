@@ -1,10 +1,11 @@
 <section class="github section">
     <div class="section-inner">
         <h2 class="heading">СВЯЗАТЬСЯ СО МНОЙ</h2>
-        <form action="{% url 'index' %}" method="post">
+        <form action="{% url 'name_send_form' %}" method="post">
             {% csrf_token %}
-            <div>{{form.non_field_errors}}</div>
+
             {% for f in form %}
+            <div>{{f.errors}}</div>
             <p><label class="form-label" for="{{form.title.id_for_lable}}">{{f.label}}</label> {{f}}</p>
             {% endfor %}
             <div class="clear"></div>
@@ -15,3 +16,4 @@
         </form>
     </div>
 </section>
+<!-- -->
